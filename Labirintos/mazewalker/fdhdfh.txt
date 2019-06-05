@@ -1,0 +1,51 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+int ler (){
+	int l,c,i,j;
+char m[l][c];
+	char nome[100];
+	scanf("%s",nome);
+	char txt[5]=".txt";
+	char endereco[100] = "C:\\Users\\Stenio Andrade\\OneDrive\\Programas\\Geany\\Labirintos\\texts\\";
+		FILE* arq;
+			arq = fopen(strcat(endereco,strcat(nome,txt)),"r");
+				if(arq==NULL) printf("Arquivo inexistente!\n");
+				else {
+					fscanf(arq,"%d %d%*c",&l,&c);
+					printf("linhas = %d e colunas = %d\n",l,c);
+						
+							while (!feof(arq)){
+								for(i=0;i<l;i++){
+									for(j=0;j<c;j++){
+										m[i][j]=fgetc(arq);
+										fgetc(arq);
+										printf("%c ",m[i][j]);
+									}
+									printf("\n");
+								}
+							}
+							fclose(arq);	
+				}
+return 0;
+}
+int escrever(int k, int l,char o){
+	int i=0,j=0;
+	FILE* arq;
+	arq = fopen("eoq.txt","w");
+	for(i=0;i<k ;i++){		
+	for(j=0;j<l ;j++){
+	fprintf(arq ,"%c ",m[i][j]);
+		
+		
+	
+}
+	} return 0;
+}
+
+
+int main(){
+	ler();
+	return 0;
+
+}
